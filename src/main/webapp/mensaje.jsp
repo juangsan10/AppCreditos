@@ -10,7 +10,7 @@
     <body>
         <h1>
             <c:out value="${sessionScope.MENSAJE}"></c:out><br>
-            <a href="${pageContext.servletContext.contextPath}/views/Menu.jsp">Regresar</a>
+            <a href="${pageContext.servletContext.contextPath}/index.jsp">Regresar</a>
         </h1>
     </body>
 </html>

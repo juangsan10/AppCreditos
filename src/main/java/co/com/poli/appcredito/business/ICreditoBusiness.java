@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface ICreditoBusiness {
     
-    List<Credito> ObtenerListaCursos();
-    Credito obtenerCurso(String idCurso);
-    String crearCurso(Credito curso);
-    String modificarCurso(Credito curso);
-    String eliminarCurso(String idCurso);
+      List<Credito> ObtenerListaCredito();
+    Credito obtenerCredito(String idCredito);
+    String crearCredito(Credito credito);
+    String modificarCredito(Credito credito);
+    String eliminarCredito(String idCredito);
 }

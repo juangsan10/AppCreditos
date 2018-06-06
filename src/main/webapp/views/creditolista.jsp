@@ -12,7 +12,7 @@
         <meta name="author" content="">
         <link rel="icon" href="../../../../favicon.ico">
 
-        <title>Menu</title>
+        <title>APP CREDITOS</title>
 
         <!-- Bootstrap core CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
@@ -38,56 +38,56 @@
                 </ul>
             </div>
         </nav>
+                    
+         
+                   
+                        
+          <div class="col-12">
 
-        <main role="main">
-
+      
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                   <caption>Lista de Creditos</caption>
                 <div class="container">
-                    <table class="table">
+                    <table class="table table-striped table-hover">
                       
-                        <thead>
+                        <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Numero Credito</th>
                                 <th scope="col">Documento</th>
                                 <th scope="col">NombreyApellidos</th>
                                 <th scope="col">Monto</th>
-                                <th scope="col">TipoTrabajador</th>
                                 <th scope="col">Tipo de Credito</th>
-                                <th scope="col">...</th>
-                            </tr>
-                        </thead>
+                                <th scope="col">TipoTrabajador</th>
+                         </tr>
+                     
+                        </tbody>   </thead>
                         <tbody>
-                            <c:forEach var="index" items="${sessionScope.LISTADO}">
+                            <c:forEach var="Credito" items="${sessionScope.LISTADO}">
                             <!--Se crea form por cada fila para actualizar-->
                             <form method="post" 
-                                action="${pageContext.servletContext.contextPath}/CreditoServlet?accion=actualizar">
+                              
                                 <tr>
-                                    <td><input type="text" value="${Credito.getIdCredito()}" name="txtnumcredito"></td>
-                                    <td><input type="text" value="${Credito.getDocumento()}" name="txtdocumento">
-                                    <td><input type="text" value="${Credito.getNombreyapellido()}" name="txtnombreapellido">
-                                    <td><input type="checkbox" value="${Credito.getMonto()}" name="txtmonto">
-                                           
-                                 
-                                    <td></td>
+                                    <td >${Credito.getNumerocredito()}</td>
+                                    <td >${Credito.getDocumento()}</td>
+                                    <td >${Credito.getNombreApellido()}</td>
+                                    <td >${Credito.getMonto()}</td>
+                                    <td>${Credito.getTipocredito()}  </td>
+                                    <td>${Credito.getTipotrabajador()}</td>
                                 </tr>
                                </form>
-
                             </c:forEach>
                         </tbody>
                     </table>
                 </div>
-            </div>
+           
 
             <!-- Example row of columns -->
 
-            <hr>
+                </div> <!-- /container -->
+                    </div>
 
-            </div> <!-- /container -->
-
-        </main>
-
+        
          <%@include  file = "/WEB-INF/jspf/footer.jspf" %>
 
         <!-- Bootstrap core JavaScript

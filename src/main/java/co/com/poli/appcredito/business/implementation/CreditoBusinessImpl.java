@@ -7,45 +7,45 @@ import java.util.List;
 import co.com.poli.appcredito.business.ICreditoBusiness;
 
 
-public abstract class CreditoBusinessImpl implements ICreditoBusiness {
+public  class CreditoBusinessImpl implements ICreditoBusiness {
 
     private CreditoDaoImpl cursoDaoImpl = new CreditoDaoImpl() {};
 
     @Override
-    public List<Credito> ObtenerListaCursos() {
+    public List<Credito> ObtenerListaCredito() {
         return cursoDaoImpl.ObtenerListaCredito();
     }
 
     @Override
-    public Credito obtenerCurso(String idCurso) {
-        return cursoDaoImpl.obtenerCredito(idCurso);
+    public Credito obtenerCredito(String idCredito) {
+        return cursoDaoImpl.obtenerCredito(idCredito);
     }
 
-    public String crearCredito(Credito curso) {
-        String respuesta = "Curso creado";
-        Credito cur = obtenerCurso(curso.getIdCredito());
+    public String crearCredito(Credito credito) {
+        String respuesta = "Credito creado";
+        Credito cur = obtenerCredito(credito.getIdCredito());
         if (cur == null) {
-            respuesta = cursoDaoImpl.crearCredito(curso);
+            respuesta = cursoDaoImpl.crearCredito(credito);
         }
         return respuesta;
     }
 
     @Override
-    public String modificarCurso(Credito curso) {
-        String respuesta = "Curso no existe";
-        Credito cur = obtenerCurso(curso.getIdCredito());
+    public String modificarCredito(Credito credito) {
+        String respuesta = "Credito no existe";
+        Credito cur = obtenerCredito(credito.getIdCredito());
         if (cur != null){
-            respuesta = cursoDaoImpl.modificarCredito(curso);
+            respuesta = cursoDaoImpl.modificarCredito(credito);
         }
         return respuesta;
     }
 
     @Override
-    public String eliminarCurso(String idCurso) {
-        String respuesta = "Curso no existe";
-        Credito cur = obtenerCurso(idCurso);
+    public String eliminarCredito(String idCredito) {
+        String respuesta = "Credito no existe";
+        Credito cur = obtenerCredito(idCredito);
         if (cur != null){
-            respuesta = cursoDaoImpl.eliminarCredito(idCurso);
+            respuesta = cursoDaoImpl.eliminarCredito(idCredito);
         }
         return respuesta;
     }
